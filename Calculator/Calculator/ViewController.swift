@@ -10,60 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var operatorClicked = false
-    var firstValue: Double = 0
-    var operatorActive: String?
+    lazy var calculator = Calculator()
     
     @IBOutlet weak var display: UILabel!
     @IBOutlet var numbersArray: [UIButton]!
     @IBOutlet var operatorsArray: [UIButton]!
     
     @IBAction func clearCalculator(_ sender: Any) {
-        firstValue = 0
-        operatorClicked = false
-        operatorActive = nil
-        display.text = "0"
+        calculator.clear()
+        display.text = calculator.display
     }
     
     @IBAction func operatorPressed(_ sender: UIButton) {
         if let index = operatorsArray.index(of: sender), let operatorCalc = operatorsArray[index].currentTitle {
-            operatorClicked = true
-            calculateFirstValue()
-            display.text = firstValue.forTrailingZero()
-            operatorActive = operatorCalc
+            calculator.operatorPressed(operatorCalc)
+            display.text = calculator.display
         }
     }
 
     @IBAction func numberPressed(_ sender: UIButton) {
         if let buttonNumber = numbersArray.index(of: sender), let numPressed = numbersArray[buttonNumber].currentTitle {
-            if operatorClicked || display.text == "0" {
-                operatorClicked = false
-                display.text = numPressed
-            } else {
-                display.text? += numPressed
-            }
-        }
-    }
-
-    func calculateFirstValue() {
-        let currentValueDisplay: Double! = Double(display.text ?? "0")
-
-        switch operatorActive {
-        case "+":
-            firstValue = firstValue + currentValueDisplay
-        case "-":
-            firstValue = firstValue - currentValueDisplay
-        case "*":
-            firstValue = firstValue * currentValueDisplay
-        case "/":
-            firstValue = firstValue / currentValueDisplay
-        case "ˆ":
-            firstValue = pow(firstValue, currentValueDisplay)
-        case "√":
-            firstValue = sqrt(currentValueDisplay)
-        default:
-            operatorActive = nil
-            firstValue = currentValueDisplay
+            display.text = calculator.numberPressed(numPressed)
         }
     }
 }
