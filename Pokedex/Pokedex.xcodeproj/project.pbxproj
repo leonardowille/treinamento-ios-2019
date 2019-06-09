@@ -16,8 +16,14 @@
 		ABD8C94E22AAC55100AB3718 /* PokemonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C94D22AAC55100AB3718 /* PokemonType.swift */; };
 		ABD8C95122AAD76000AB3718 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C95022AAD75F00AB3718 /* UIViewExtensions.swift */; };
 		ABD8C95422AADA6F00AB3718 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C95322AADA6F00AB3718 /* GradientView.swift */; };
+		CE17DF4222AD3A7B0096A88E /* MoveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17DF4122AD3A7B0096A88E /* MoveTableViewCell.swift */; };
 		CE20544722ABE16C00D4678D /* RequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20544622ABE16C00D4678D /* RequestMaker.swift */; };
 		CE20544922ABE1B800D4678D /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20544822ABE1B800D4678D /* Pokemon.swift */; };
+		CE20544C22AC11EF00D4678D /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20544B22AC11EF00D4678D /* PokemonTableViewCell.swift */; };
+		CE20544E22AC20BB00D4678D /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20544D22AC20BB00D4678D /* UIImageViewExtensions.swift */; };
+		CE20545022AC2F7000D4678D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20544F22AC2F7000D4678D /* DetailViewController.swift */; };
+		CE20545222AC4A7100D4678D /* MovesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20545122AC4A7100D4678D /* MovesViewController.swift */; };
+		CE20545422AC4C8600D4678D /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20545322AC4C8600D4678D /* Move.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +39,14 @@
 		ABD8C95022AAD75F00AB3718 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		ABD8C95322AADA6F00AB3718 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		C19E682A7C5B407F900D2BD3 /* Pods-Pokedex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokedex.release.xcconfig"; path = "Target Support Files/Pods-Pokedex/Pods-Pokedex.release.xcconfig"; sourceTree = "<group>"; };
+		CE17DF4122AD3A7B0096A88E /* MoveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveTableViewCell.swift; sourceTree = "<group>"; };
 		CE20544622ABE16C00D4678D /* RequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMaker.swift; sourceTree = "<group>"; };
 		CE20544822ABE1B800D4678D /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		CE20544B22AC11EF00D4678D /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
+		CE20544D22AC20BB00D4678D /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		CE20544F22AC2F7000D4678D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CE20545122AC4A7100D4678D /* MovesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovesViewController.swift; sourceTree = "<group>"; };
+		CE20545322AC4C8600D4678D /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		F971D046DECCDE613A6170D3 /* Pods-Pokedex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokedex.debug.xcconfig"; path = "Target Support Files/Pods-Pokedex/Pods-Pokedex.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +92,7 @@
 		ABD8C93922AAC4FA00AB3718 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				CE20544A22AC11D900D4678D /* Components */,
 				CE20544522ABE0AF00D4678D /* API */,
 				ABD8C95222AADA6200AB3718 /* CustomViews */,
 				ABD8C94F22AAD74E00AB3718 /* Extensions */,
@@ -90,6 +103,8 @@
 				ABD8C94122AAC4FC00AB3718 /* Assets.xcassets */,
 				ABD8C94322AAC4FC00AB3718 /* LaunchScreen.storyboard */,
 				ABD8C94622AAC4FC00AB3718 /* Info.plist */,
+				CE20544F22AC2F7000D4678D /* DetailViewController.swift */,
+				CE20545122AC4A7100D4678D /* MovesViewController.swift */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -99,6 +114,7 @@
 			children = (
 				ABD8C94D22AAC55100AB3718 /* PokemonType.swift */,
 				CE20544822ABE1B800D4678D /* Pokemon.swift */,
+				CE20545322AC4C8600D4678D /* Move.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -107,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				ABD8C95022AAD75F00AB3718 /* UIViewExtensions.swift */,
+				CE20544D22AC20BB00D4678D /* UIImageViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -135,6 +152,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		CE20544A22AC11D900D4678D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE20544B22AC11EF00D4678D /* PokemonTableViewCell.swift */,
+				CE17DF4122AD3A7B0096A88E /* MoveTableViewCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +172,7 @@
 				ABD8C93322AAC4FA00AB3718 /* Sources */,
 				ABD8C93422AAC4FA00AB3718 /* Frameworks */,
 				ABD8C93522AAC4FA00AB3718 /* Resources */,
+				CBC1678AF131B4EA94863A81 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,6 +248,17 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CBC1678AF131B4EA94863A81 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pokedex/Pods-Pokedex-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -229,10 +267,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE20544922ABE1B800D4678D /* Pokemon.swift in Sources */,
+				CE20545222AC4A7100D4678D /* MovesViewController.swift in Sources */,
+				CE20544C22AC11EF00D4678D /* PokemonTableViewCell.swift in Sources */,
 				ABD8C93D22AAC4FA00AB3718 /* PokemonListViewController.swift in Sources */,
+				CE20545422AC4C8600D4678D /* Move.swift in Sources */,
 				ABD8C94E22AAC55100AB3718 /* PokemonType.swift in Sources */,
+				CE20544E22AC20BB00D4678D /* UIImageViewExtensions.swift in Sources */,
+				CE17DF4222AD3A7B0096A88E /* MoveTableViewCell.swift in Sources */,
 				ABD8C95422AADA6F00AB3718 /* GradientView.swift in Sources */,
 				ABD8C95122AAD76000AB3718 /* UIViewExtensions.swift in Sources */,
+				CE20545022AC2F7000D4678D /* DetailViewController.swift in Sources */,
 				CE20544722ABE16C00D4678D /* RequestMaker.swift in Sources */,
 				ABD8C93B22AAC4FA00AB3718 /* AppDelegate.swift in Sources */,
 			);
