@@ -11,6 +11,7 @@ import UIKit
 class PokemonListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIView!
     
     let requestMaker = RequestMaker()
     
@@ -54,7 +55,9 @@ extension PokemonListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = self.storyboard
-        if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") {
+        if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            
+            detailViewController.pokemon = self.pokemonList[indexPath.row]
             navigationController?.present(detailViewController, animated: true)
         }
     }
@@ -63,12 +66,11 @@ extension PokemonListViewController: UITableViewDelegate {
 extension PokemonListViewController {
     
     func fetchData() {
-//        RequestMaker().make(withEndpoint: .details(query: "7")) { (pokemon: Pokemon) in
-//            print(pokemon)
-//        }
         RequestMaker().make(withEndpoint: .list) { (pokemonList: PokemonList) in
+            
             self.pokemonList = pokemonList.pokemons
             DispatchQueue.main.async {
+                self.activityIndicator.isHidden = true
                 self.tableView.reloadData()
             }
         }

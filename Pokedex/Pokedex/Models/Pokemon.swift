@@ -13,10 +13,17 @@ struct PokemonList: Codable {
     let pokemons: [Pokemon]
 }
 
+struct Status: Codable {
+    let name: String
+    let value: Int
+}
+
 struct Pokemon: Codable {
     
     let id: String
     let name: String
     let image: String
     let types: [PokemonType]
+    let description: String?
+    let stats: [Status]?
 }
