@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.accessibilityIdentifier = "detailView"
         self.initialConfig()
         
         self.requestPokemon()
@@ -80,10 +80,10 @@ class DetailViewController: UIViewController {
             DispatchQueue.main.async {
                 self.pokemonNameLabel.text = pokemon.name.capitalized
                 // Essa merda ta vindo nil
-//                if let description = pokemon.description {
-//                    self.pokemonDescriptionTextView.text = description
-//                }
-                self.pokemonDescriptionTextView.text = "After birth, its\nback swells and\nhardens into a shell. Powerfully\nsprays foam from\nits mouth."
+                if let description = pokemon.description {
+                    self.pokemonDescriptionTextView.text = description
+                }
+//                self.pokemonDescriptionTextView.text = "After birth, its\nback swells and\nhardens into a shell. Powerfully\nsprays foam from\nits mouth."
                 
             }
         }
@@ -92,6 +92,7 @@ class DetailViewController: UIViewController {
     func requestPokemon(){
         if let pokemon = self.pokemon {
             RequestMaker().make(withEndpoint: .details(query: pokemon.id)) { (pokemon: Pokemon) in
+                self.pokemon = pokemon
                 self.animatePokemonImageToTop()
             }
         }

@@ -16,6 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
         
+        guard NSClassFromString("XCTest") == nil else {
+            return
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let initialViewController = storyboard.instantiateInitialViewController() else {
+            return
+        }
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        
+        if ProcessInfo.processInfo.arguments.contains("UITests") {
+            window.layer.speed = 100
+        }
+    
+        self.window = window
+        window.rootViewController = initialViewController
+        window.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
