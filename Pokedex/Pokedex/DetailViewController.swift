@@ -18,6 +18,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var pokemonImageCenterVerticallyConstraint: NSLayoutConstraint!
     @IBOutlet weak var pokemonImageViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var pokemonTypeView: PokemonTypeView!
+    @IBOutlet weak var backgroudDetailsView: NSLayoutConstraint!
+    @IBOutlet weak var pokemonNameLabel: UILabel!
+    @IBOutlet weak var pokemonDescriptionTextView: UITextView!
     
     var pokemon: Pokemon?
     
@@ -59,7 +62,7 @@ class DetailViewController: UIViewController {
             self.pokemonImageViewTopConstraint.priority = UILayoutPriority(999)
             self.pokemonImageViewHeightConstraint.constant = 80
             self.pokemonImageViewWidthConstraint.constant = 80
-            
+            self.backgroudDetailsView.constant = -20            
             
             UIView.animate(withDuration: 1, animations: {
                 self.imageView.alpha = 1
@@ -74,6 +77,15 @@ class DetailViewController: UIViewController {
             self.gradienteView.endColor = pokemon.types.first? .color?.lighter() ?? .white
             
             self.imageView.loadImage(from: pokemon.image)
+            DispatchQueue.main.async {
+                self.pokemonNameLabel.text = pokemon.name.capitalized
+                // Essa merda ta vindo nil
+//                if let description = pokemon.description {
+//                    self.pokemonDescriptionTextView.text = description
+//                }
+                self.pokemonDescriptionTextView.text = "After birth, its\nback swells and\nhardens into a shell. Powerfully\nsprays foam from\nits mouth."
+                
+            }
         }
     }
     
