@@ -30,4 +30,20 @@ struct Pokemon: Codable {
     let types: [PokemonType]
     var description: String?
     let stats: [Status]?
+    
+    var mainType: PokemonType? {
+        return self.types.first
+    }
+    
+    var strongestStats: Status? {
+        if let stats = self.stats {
+            var copiedStats = stats
+            copiedStats.sort(by: { (first, second) -> Bool in
+                first.value > second.value
+            })
+            return copiedStats.first
+        }
+        
+        return self.stats?.first
+    }
 }
